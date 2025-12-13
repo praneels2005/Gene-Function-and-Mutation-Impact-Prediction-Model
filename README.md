@@ -69,7 +69,7 @@ Other exploratory analyses supporting the results in the final report
 
 These visualizations serve as the foundation for our interpretive claims and final conclusions.
 
-**b** Summary **b**
+Summary 
 
 Executing these three notebooks in order:
 
