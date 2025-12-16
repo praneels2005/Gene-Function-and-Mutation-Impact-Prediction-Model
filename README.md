@@ -64,9 +64,12 @@ This repository demonstrates an end-to-end data science workflow on biological s
      <img width="653" height="475" alt="Screenshot 2025-12-13 at 5 13 03 PM" src="https://github.com/user-attachments/assets/0a94db57-6118-4e8f-be91-c57520ac83e3" />
   
   - Mutation severity predictions are driven primarily by structural disruption signals such as protein length and length change, while GC content plays a secondary role:
-    ![Mutation severity predictions](figures/MutationSeverityPlot.png)
+  
+    ![Mutation severity predictions](figures/SummaryPlot.png)
  
   - PCA projection showing separability among gene function classes.
+ 
+  
       ![PCA projection of gene classes](figures/pca_projection.png)
 
   - Confusion matrix on held-out test set; rows = true labels, columns = predicted labels.
