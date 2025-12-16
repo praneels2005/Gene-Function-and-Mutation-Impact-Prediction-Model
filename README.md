@@ -8,11 +8,10 @@ Table of contents
 - Quickstart
 - Notebooks
 - Visualizations & references
-- Reproducibility
 - Project structure
-- Outcomes
-- Contributing & contact
-- License
+- Tech Stack
+- Measurable Outcomes
+- Sources
 
 # Overview
 This repository demonstrates an end-to-end data science workflow on biological sequence data:
@@ -59,40 +58,19 @@ This repository demonstrates an end-to-end data science workflow on biological s
    - Reads trained artifacts and `cleaned_features.csv`
    - Generates interpretability outputs (feature importance plots, mutation-impact distributions)
 
-Markdown examples (copy into README where you'd like figures displayed):
-
-![PCA projection of gene classes](figures/pca_projection.png)
-_Figure 1._ PCA projection showing separability among gene function classes. (Produced by Visualization.ipynb and saved to `figures/pca_projection.png`.)
-
-![Confusion matrix for Random Forest](figures/confusion_matrix.png)
-_Figure 2._ Confusion matrix on held-out test set; rows = true labels, columns = predicted labels.
-
-How to export plots from notebooks (Python example)
-plt.tight_layout()
-plt.savefig('figures/pca_projection.png', dpi=300, bbox_inches='tight')
-
-Headless notebook execution (reproducibility)
-If you want to reproduce everything in one go (generate data, train models, and export figures), run the notebooks programmatically:
-
-pip install -r requirements.txt
-mkdir -p executed figures
-
-# Execute notebooks (adjust timeout if needed)
-jupyter nbconvert --to notebook --execute --ExecutePreprocessor.timeout=600 Data_Pipeline.ipynb --output executed/Data_Pipeline.ipynb
-jupyter nbconvert --to notebook --execute --ExecutePreprocessor.timeout=600 ML_Engineer.ipynb --output executed/ML_Engineer.ipynb
-jupyter nbconvert --to notebook --execute --ExecutePreprocessor.timeout=600 Visualization.ipynb --output executed/Visualization.ipynb
-
-Results & metrics (how to present — replace placeholders with your real numbers)
-Add a short "Key results" section here to highlight performance. Do NOT invent numbers — populate these after running ML_Engineer.ipynb.
-
-Example template:
-
-# Key results (replace with actual values)
+# Key results
 - Notable insights:
-  - Top 15 features by importance: <img width="653" height="475" alt="Screenshot 2025-12-13 at 5 13 03 PM" src="https://github.com/user-attachments/assets/0a94db57-6118-4e8f-be91-c57520ac83e3" />
-  - Summary plot showing which features drive high-impact predictions: 
+  - Top 15 features by importance:
+     <img width="653" height="475" alt="Screenshot 2025-12-13 at 5 13 03 PM" src="https://github.com/user-attachments/assets/0a94db57-6118-4e8f-be91-c57520ac83e3" />
+  
+  - Mutation severity predictions are driven primarily by structural disruption signals such as protein length and length change, while GC content plays a secondary role:
+    ![Mutation severity predictions](figures/MutationSeverityPlot.png)
+ 
+  - PCA projection showing separability among gene function classes.
+      ![PCA projection of gene classes](figures/pca_projection.png)
 
-  - Synthetic mutation impact: median predicted-impact score = X.XX (describe units)
+  - Confusion matrix on held-out test set; rows = true labels, columns = predicted labels.
+      ![Confusion matrix for Random Forest](figures/confusion_matrix.png)
 
 # Project structure
 - README.md
@@ -118,6 +96,6 @@ Example template:
 - Designed and executed a mutation-impact simulation framework to quantify predicted functional effects of sequence variants; produced publication-quality visualizations and feature-importance analyses.
 - Packaged models and preprocessing artifacts for reproducible inference and downstream deployment.
 
-Acknowledgements & Data sources
+# Acknowledgements & Data sources
 - NCBI GenBank (via Entrez E-utilities)
 - Biopython
